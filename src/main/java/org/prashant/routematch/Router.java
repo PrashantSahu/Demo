@@ -40,6 +40,6 @@ public class Router {
 //            node = node.children.get(parts[i]);
 //            if(node==null) return NOT_FOUND;
         }
-        return node.handler;
+        return node.handler!=null ? node.handler : NOT_FOUND;
     }
 }
