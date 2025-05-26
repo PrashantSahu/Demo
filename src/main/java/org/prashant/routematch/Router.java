@@ -1,4 +1,4 @@
-package org.example.routematch;
+package org.prashant.routematch;
 
 public class Router {
 
@@ -27,8 +27,18 @@ public class Router {
         TrieNode node = root;
 
         for(int i=0; i<parts.length; i++) {
-            node = node.children.get(parts[i]);
-            if(node==null) return NOT_FOUND;
+            if(node.children.get(parts[i]) !=null) {
+                node = node.children.get(parts[i]);
+            } else {
+                if(node.children.containsKey("*")) {
+                    node = node.children.get("*");
+                } else {
+                    return NOT_FOUND;
+                }
+            }
+
+//            node = node.children.get(parts[i]);
+//            if(node==null) return NOT_FOUND;
         }
         return node.handler;
     }
