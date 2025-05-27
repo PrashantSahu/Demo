@@ -8,6 +8,11 @@ public class RateLimiterRegistry {
 
     public void registerCustomer(String name, StrategyType type, int maxRequests, int windowSizeInSeconds) {
 
+        switch (type) {
+            case FIXED_WINDOW:
+
+        }
+
     }
 
     public boolean isRegistered(String customerId) {
