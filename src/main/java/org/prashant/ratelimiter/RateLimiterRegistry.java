@@ -8,10 +8,7 @@ public class RateLimiterRegistry {
 
     public void registerCustomer(String name, StrategyType type, int maxRequests, int windowSizeInSeconds) {
 
-        switch (type) {
-            case FIXED_WINDOW:
-
-        }
+        customerStrategies.put(name, RateLimiterFactory.createStrategy(type, maxRequests, windowSizeInSeconds));
 
     }
 

@@ -13,16 +13,17 @@ public class RateLimiterDemo {
 
         RateLimiter rateLimiter = new RateLimiter(registry);
 
-        rateLimiter.isAllowed(ALICE);
-        rateLimiter.isAllowed(ALICE);
-        rateLimiter.isAllowed(ALICE);
-        rateLimiter.isAllowed(ALICE);
-        rateLimiter.isAllowed(ALICE);
+        System.out.println(rateLimiter.isAllowed(ALICE));
+        System.out.println(rateLimiter.isAllowed(ALICE));
+        System.out.println(rateLimiter.isAllowed(ALICE));
+        System.out.println(rateLimiter.isAllowed(ALICE));
+        System.out.println(rateLimiter.isAllowed(ALICE));
 
-        rateLimiter.isAllowed(BOB);
-        rateLimiter.isAllowed(BOB);
-        rateLimiter.isAllowed(BOB);
-        rateLimiter.isAllowed(BOB);
-        rateLimiter.isAllowed(BOB);
+
+        System.out.println(rateLimiter.isAllowed(BOB));
+        System.out.println(rateLimiter.isAllowed(BOB));
+        System.out.println(rateLimiter.isAllowed(BOB));
+        System.out.println(rateLimiter.isAllowed(BOB));
+        System.out.println(rateLimiter.isAllowed(BOB));
     }
 }
