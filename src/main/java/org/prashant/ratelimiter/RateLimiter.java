@@ -13,6 +13,6 @@ public class RateLimiter {
         }
 
         RateLimitingStrategy strategy = registry.customerStrategies.get(customerId);
-        return strategy.isRequestAllowed(customerId);
+        return strategy.isRequestAllowed();
     }
 }

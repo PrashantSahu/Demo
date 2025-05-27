@@ -16,8 +16,8 @@ public class SlidingWindowStrategy implements RateLimitingStrategy{
     }
 
     @Override
-    public boolean isRequestAllowed(String customerId) {
-        Long now = System.currentTimeMillis();
+    public synchronized boolean isRequestAllowed() {
+        long now = System.currentTimeMillis();
         Long windowStart = now - windowSizeInSeconds*1000L;
 
         while(!timestamps.isEmpty() && timestamps.peekFirst()<windowStart) {

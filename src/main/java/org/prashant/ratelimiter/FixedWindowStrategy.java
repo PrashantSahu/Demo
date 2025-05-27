@@ -14,7 +14,7 @@ public class FixedWindowStrategy implements RateLimitingStrategy{
     }
 
     @Override
-    public boolean isRequestAllowed(String customerId) {
+    public synchronized boolean isRequestAllowed() {
         long now = System.currentTimeMillis();
         long windowKey = now/1000;
 
