@@ -16,7 +16,7 @@ public class FixedWindowStrategy implements RateLimitingStrategy{
     @Override
     public synchronized boolean isRequestAllowed() {
         long now = System.currentTimeMillis();
-        long windowKey = now/1000;
+        long windowKey = now/(windowSizeInSeconds* 1000L);
 
         if(currentWindowKey != windowKey) {
             currentWindowKey = windowKey;
